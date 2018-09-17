@@ -1,0 +1,45 @@
+﻿
+@model UnitProduct.Models.TotalSum
+@{
+    ViewData["Title"] = "Calculate";
+}
+
+<h2>Calculate</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Product Name </th>
+            <th>Cost</th>
+            <th>
+
+            </th>
+        </tr>
+
+    </thead>
+    <tbody>
+        @foreach (var item in Model.TotalProduct)
+        {
+            <tr>
+                <th scope="row">@item.ArticleName</th>
+                <td>@item.ArticleCost</td>
+
+            </tr>
+        }
+        <tr>
+            <th>Total Discount : </th>
+            <th>@Model.TotalDiscount</th>
+            <th>
+
+            </th>
+        </tr>
+        <tr>
+            <th> Total Amount :</span> </th>
+            <th>@Model.GrandTotal</th>
+            <th>
+
+            </th>
+        </tr>
+
+    </tbody>
+</table>

@@ -1,0 +1,42 @@
+﻿@model IEnumerable<ArticleDetails>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<form method="post">
+    <h1>Customer Category</h1>
+    <select name="Customer">
+        <option value="Regular">Regular</option>
+        <option value="Premium">Premium</option>
+    </select>
+    <input type="submit" value="Total" class="btn-btn-success" />
+
+</form>
+
+<h1>Yash Customer Shop</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Article Name</th>
+            <th>Article Cost</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <th scope="row"> @item.ArticleName</th>
+                <td>@item.ArticleCost</td>
+                <td> <span class="btn-btn-success">
+                    @Html.ActionLink("Add","AddProduct",new { articleName = item.ArticleName, articleCost =item.ArticleCost })
+                    </span>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+    
+<script src="~/js/colour.js"></script>
